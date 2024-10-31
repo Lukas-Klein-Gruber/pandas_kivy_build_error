@@ -1,0 +1,296 @@
+lukas@DESKTOP-DH3UIVG:~/p4a_pandas_test$ buildozer -v android debug
+# Check configuration tokens
+# `android.archs` not detected, instead `android.arch` is present.
+# `android.arch` will be removed and ignored in future.
+# If you're seeing this error, please migrate to `android.archs`.
+# Ensure build layout
+# Check configuration tokens
+# Preparing build
+# Check requirements for android
+# Search for Git (git)
+#  -> found at /usr/bin/git
+# Search for Cython (cython)
+#  -> found at /home/lukas/.local/bin/cython
+# Search for Java compiler (javac)
+#  -> found at /usr/lib/jvm/java-17-openjdk-amd64/bin/javac
+# Search for Java keytool (keytool)
+#  -> found at /usr/lib/jvm/java-17-openjdk-amd64/bin/keytool
+# Install platform
+# Run ['git', 'config', '--get', 'remote.origin.url']
+# Cwd /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+https://github.com/kivy/python-for-android.git
+# Run ['git', 'branch', '-vv']
+# Cwd /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+* develop 10c52926 [origin/develop] Merge pull request #3074 from autosportlabs/brent/private_github_repos
+# Run ['/usr/bin/python3', '-m', 'pip', 'install', '-q', '--user', 'appdirs', 'colorama>=0.3.3', 'jinja2', 'sh>=2, <3.0; sys_platform!="win32"', 'build', 'toml', 'packaging', 'setuptools', 'wheel~=0.43.0']
+# Cwd None
+# Apache ANT found at /home/lukas/.buildozer/android/platform/apache-ant-1.9.4
+# Android SDK found at /home/lukas/.buildozer/android/platform/android-sdk
+# Recommended android's NDK version by p4a is: 25b
+# Android NDK found at /home/lukas/.buildozer/android/platform/android-ndk-r25b
+# Run ['/usr/bin/python3', '-m', 'pythonforandroid.toolchain', 'aab', '-h', '--color=always', '--storage-dir=/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a', '--ndk-api=24', '--ignore-setup-py', '--debug']
+# Cwd /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[WARNING]: prerequisites.py is experimental and does not support all prerequisites yet.
+[WARNING]: Please report any issues to the python-for-android issue tracker.
+[WARNING]: prerequisites.py is experimental and does not support all prerequisites yet.
+[WARNING]: Please report any issues to the python-for-android issue tracker.
+usage: toolchain.py aab [-h] [--debug] [--color {always,never,auto}]
+                        [--sdk-dir SDK_DIR] [--ndk-dir NDK_DIR]
+                        [--android-api ANDROID_API]
+                        [--ndk-version NDK_VERSION] [--ndk-api NDK_API]
+                        [--symlink-bootstrap-files]
+                        [--storage-dir STORAGE_DIR] [--arch ARCH]
+                        [--dist-name DIST_NAME] [--requirements REQUIREMENTS]
+                        [--recipe-blacklist RECIPE_BLACKLIST]
+                        [--blacklist-requirements BLACKLIST_REQUIREMENTS]
+                        [--bootstrap BOOTSTRAP] [--hook HOOK] [--force-build]
+                        [--no-force-build] [--require-perfect-match]
+                        [--no-require-perfect-match] [--allow-replace-dist]
+                        [--no-allow-replace-dist]
+                        [--local-recipes LOCAL_RECIPES]
+                        [--activity-class-name ACTIVITY_CLASS_NAME]
+                        [--service-class-name SERVICE_CLASS_NAME]
+                        [--java-build-tool {auto,ant,gradle}] [--copy-libs]
+                        [--no-copy-libs] [--add-asset ASSETS]
+                        [--add-resource RESOURCES] [--private PRIVATE]
+                        [--use-setup-py] [--ignore-setup-py] [--release]
+                        [--with-debug-symbols] [--keystore KEYSTORE]
+                        [--signkey SIGNKEY] [--keystorepw KEYSTOREPW]
+                        [--signkeypw SIGNKEYPW]
+
+options:
+  -h, --help            show this help message and exit
+  --debug               Display debug output and all build info
+  --color {always,never,auto}
+                        Enable or disable color output (default enabled on
+                        tty)
+  --sdk-dir SDK_DIR, --sdk_dir SDK_DIR
+                        The filepath where the Android SDK is installed
+  --ndk-dir NDK_DIR, --ndk_dir NDK_DIR
+                        The filepath where the Android NDK is installed
+  --android-api ANDROID_API, --android_api ANDROID_API
+                        The Android API level to build against defaults to 33
+                        if not specified.
+  --ndk-version NDK_VERSION, --ndk_version NDK_VERSION
+                        DEPRECATED: the NDK version is now found automatically
+                        or not at all.
+  --ndk-api NDK_API     The Android API level to compile against. This should
+                        be your *minimal supported* API, not normally the same
+                        as your --android-api. Defaults to min(ANDROID_API,
+                        24) if not specified.
+  --symlink-bootstrap-files, --ssymlink_bootstrap_files
+                        If True, symlinks the bootstrap files creation. This
+                        is useful for development only, it could also cause
+                        weird problems.
+  --storage-dir STORAGE_DIR
+                        Primary storage directory for downloads and builds
+                        (default: /home/lukas/.local/share/python-for-android)
+  --arch ARCH           The archs to build for.
+  --dist-name DIST_NAME, --dist_name DIST_NAME
+                        The name of the distribution to use or create
+  --requirements REQUIREMENTS
+                        Dependencies of your app, should be recipe names or
+                        Python modules. NOT NECESSARY if you are using Python
+                        3 with --use-setup-py
+  --recipe-blacklist RECIPE_BLACKLIST
+                        Blacklist an internal recipe from use. Allows
+                        disabling Python 3 core modules to save size
+  --blacklist-requirements BLACKLIST_REQUIREMENTS
+                        Blacklist an internal recipe from use. Allows
+                        disabling Python 3 core modules to save size
+  --bootstrap BOOTSTRAP
+                        The bootstrap to build with. Leave unset to choose
+                        automatically.
+  --hook HOOK           Filename to a module that contains python-for-android
+                        hooks
+  --local-recipes LOCAL_RECIPES, --local_recipes LOCAL_RECIPES
+                        Directory to look for local recipes
+  --activity-class-name ACTIVITY_CLASS_NAME
+                        The full java class name of the main activity
+  --service-class-name SERVICE_CLASS_NAME
+                        Full java package name of the PythonService class
+  --java-build-tool {auto,ant,gradle}
+                        The java build tool to use when packaging the APK,
+                        defaults to automatically selecting an appropriate
+                        tool.
+  --add-asset ASSETS    Put this in the assets folder in the apk.
+  --add-resource RESOURCES
+                        Put this in the res folder in the apk.
+  --private PRIVATE     the directory with the app source code files
+                        (containing your main.py entrypoint)
+  --use-setup-py        Process the setup.py of a project if present.
+                        (Experimental!
+  --ignore-setup-py     Don't run the setup.py of a project if present. This
+                        may be required if the setup.py is not designed to
+                        work inside p4a (e.g. by installing dependencies that
+                        won't work or aren't desired on Android
+  --release             Build your app as a non-debug release build. (Disables
+                        gdb debugging among other things)
+  --with-debug-symbols  Will keep debug symbols from `.so` files.
+  --keystore KEYSTORE   Keystore for JAR signing key, will use jarsigner
+                        default if not specified (release build only)
+  --signkey SIGNKEY     Key alias to sign PARSER_APK. with (release build
+                        only)
+  --keystorepw KEYSTOREPW
+                        Password for keystore
+  --signkeypw SIGNKEYPW
+                        Password for key alias
+
+  Whether to force compilation of a new distribution
+
+  --force-build
+  --no-force-build      (this is the default)
+  --require-perfect-match
+  --no-require-perfect-match
+                        (this is the default)
+  --allow-replace-dist  (this is the default)
+  --no-allow-replace-dist
+  --copy-libs
+  --no-copy-libs        (this is the default)
+# Check application requirements
+# Compile platform
+# Run ['/usr/bin/python3', '-m', 'pythonforandroid.toolchain', 'create', '--dist_name=lottiedemo', '--bootstrap=sdl2', '--requirements=python3==3.10.12,kivy==2.3.0,hostpython3==3.10.12,pyjnius==1.5.0,pandas', '--arch=armeabi-v7a', '--copy-libs', '--color=always', '--storage-dir=/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a', '--ndk-api=24', '--ignore-setup-py', '--debug']
+# Cwd /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[WARNING]: prerequisites.py is experimental and does not support all prerequisites yet.
+[WARNING]: Please report any issues to the python-for-android issue tracker.
+[WARNING]: prerequisites.py is experimental and does not support all prerequisites yet.
+[WARNING]: Please report any issues to the python-for-android issue tracker.
+[INFO]:    Recipe python3: version "3.10.12" requested
+[INFO]:    Recipe kivy: version "2.3.0" requested
+[INFO]:    Recipe hostpython3: version "3.10.12" requested
+[INFO]:    Recipe pyjnius: version "1.5.0" requested
+[INFO]:    Will compile for the following archs: armeabi-v7a
+[INFO]:    Found Android API target in $ANDROIDAPI: 31
+[INFO]:    Available Android APIs are (28, 31)
+[INFO]:    Requested API target 31 is available, continuing.
+[INFO]:    Found NDK dir in $ANDROIDNDK: /home/lukas/.buildozer/android/platform/android-ndk-r25b
+[INFO]:    Found NDK version 25b
+[INFO]:    Getting NDK API version (i.e. minimum supported API) from user argument
+[INFO]:    ccache is missing, the build will not be optimized in the future.
+[DEBUG]:   All possible dists: [<Distribution: name lottiedemo with recipes (hostpython3, libbz2, libffi, liblzma, openssl, sdl2_image, sdl2_mixer, sdl2_ttf, sqlite3, python3, sdl2, numpy, setuptools, pandas, six, pyjnius, android, kivy, pytz, requests, urllib3, chardet, python-dateutil, idna, certifi)>]
+[DEBUG]:   Dist matching name and arch: [<Distribution: name lottiedemo with recipes (hostpython3, libbz2, libffi, liblzma, openssl, sdl2_image, sdl2_mixer, sdl2_ttf, sqlite3, python3, sdl2, numpy, setuptools, pandas, six, pyjnius, android, kivy, pytz, requests, urllib3, chardet, python-dateutil, idna, certifi)>]
+[DEBUG]:   Dist matching ndk_api and recipe: [<Distribution: name lottiedemo with recipes (hostpython3, libbz2, libffi, liblzma, openssl, sdl2_image, sdl2_mixer, sdl2_ttf, sqlite3, python3, sdl2, numpy, setuptools, pandas, six, pyjnius, android, kivy, pytz, requests, urllib3, chardet, python-dateutil, idna, certifi)>]
+[INFO]:    Of the existing distributions, the following meet the given requirements:
+[INFO]:         lottiedemo: min API 24, includes recipes (hostpython3, libbz2, libffi, liblzma, openssl, sdl2_image, sdl2_mixer, sdl2_ttf, sqlite3, python3, sdl2, numpy, setuptools, pandas, six, pyjnius, android, kivy, pytz, requests, urllib3, chardet, python-dateutil, idna, certifi), built for archs (armeabi-v7a)
+[INFO]:    lottiedemo has compatible recipes, using this one
+# Build the application #2
+# Copy application source from /home/lukas/p4a_pandas_test/src
+# Create directory /home/lukas/p4a_pandas_test/.buildozer/android/app
+# Copy /home/lukas/p4a_pandas_test/src/main.py
+# Package the application
+# project.properties updated
+# Run ['/usr/bin/python3', '-m', 'pythonforandroid.toolchain', 'apk', '--bootstrap', 'sdl2', '--dist_name', 'lottiedemo', '--name', 'Lottie Demo', '--version', '0.1', '--package', 'dev.tshirtman.lottiedemo', '--minsdk', '24', '--ndk-api', '24', '--private', '/home/lukas/p4a_pandas_test/.buildozer/android/app', '--android-entrypoint', 'org.kivy.android.PythonActivity', '--android-apptheme', '@android:style/Theme.NoTitleBar', '--presplash-lottie', '/home/lukas/p4a_pandas_test/"42369-weather-wind.json"', '--orientation', 'portrait', '--window', '--enable-androidx', '--copy-libs', '--depend', '"androidx.work:work-runtime:2.2.0"', '--depend', '"androidx.annotation:annotation:1.1.0"', '--arch', 'armeabi-v7a', '--color=always', '--storage-dir=/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a', '--ndk-api=24', '--ignore-setup-py', '--debug']
+# Cwd /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[WARNING]: prerequisites.py is experimental and does not support all prerequisites yet.
+[WARNING]: Please report any issues to the python-for-android issue tracker.
+[WARNING]: prerequisites.py is experimental and does not support all prerequisites yet.
+[WARNING]: Please report any issues to the python-for-android issue tracker.
+[INFO]:    Will compile for the following archs: armeabi-v7a
+[INFO]:    Found Android API target in $ANDROIDAPI: 31
+[INFO]:    Available Android APIs are (28, 31)
+[INFO]:    Requested API target 31 is available, continuing.
+[INFO]:    Found NDK dir in $ANDROIDNDK: /home/lukas/.buildozer/android/platform/android-ndk-r25b
+[INFO]:    Found NDK version 25b
+[INFO]:    Getting NDK API version (i.e. minimum supported API) from user argument
+[INFO]:    ccache is missing, the build will not be optimized in the future.
+[DEBUG]:   All possible dists: [<Distribution: name lottiedemo with recipes (hostpython3, libbz2, libffi, liblzma, openssl, sdl2_image, sdl2_mixer, sdl2_ttf, sqlite3, python3, sdl2, numpy, setuptools, pandas, six, pyjnius, android, kivy, pytz, requests, urllib3, chardet, python-dateutil, idna, certifi)>]
+[DEBUG]:   Dist matching name and arch: [<Distribution: name lottiedemo with recipes (hostpython3, libbz2, libffi, liblzma, openssl, sdl2_image, sdl2_mixer, sdl2_ttf, sqlite3, python3, sdl2, numpy, setuptools, pandas, six, pyjnius, android, kivy, pytz, requests, urllib3, chardet, python-dateutil, idna, certifi)>]
+[DEBUG]:   Dist matching ndk_api and recipe: [<Distribution: name lottiedemo with recipes (hostpython3, libbz2, libffi, liblzma, openssl, sdl2_image, sdl2_mixer, sdl2_ttf, sqlite3, python3, sdl2, numpy, setuptools, pandas, six, pyjnius, android, kivy, pytz, requests, urllib3, chardet, python-dateutil, idna, certifi)>]
+[INFO]:    Of the existing distributions, the following meet the given requirements:
+[INFO]:         lottiedemo: min API 24, includes recipes (hostpython3, libbz2, libffi, liblzma, openssl, sdl2_image, sdl2_mixer, sdl2_ttf, sqlite3, python3, sdl2, numpy, setuptools, pandas, six, pyjnius, android, kivy, pytz, requests, urllib3, chardet, python-dateutil, idna, certifi), built for archs (armeabi-v7a)
+[INFO]:    lottiedemo has compatible recipes, using this one
+[DEBUG]:   All possible dists: [<Distribution: name lottiedemo with recipes (hostpython3, libbz2, libffi, liblzma, openssl, sdl2_image, sdl2_mixer, sdl2_ttf, sqlite3, python3, sdl2, numpy, setuptools, pandas, six, pyjnius, android, kivy, pytz, requests, urllib3, chardet, python-dateutil, idna, certifi)>]
+[DEBUG]:   Dist matching name and arch: [<Distribution: name lottiedemo with recipes (hostpython3, libbz2, libffi, liblzma, openssl, sdl2_image, sdl2_mixer, sdl2_ttf, sqlite3, python3, sdl2, numpy, setuptools, pandas, six, pyjnius, android, kivy, pytz, requests, urllib3, chardet, python-dateutil, idna, certifi)>]
+[DEBUG]:   Dist matching ndk_api and recipe: [<Distribution: name lottiedemo with recipes (hostpython3, libbz2, libffi, liblzma, openssl, sdl2_image, sdl2_mixer, sdl2_ttf, sqlite3, python3, sdl2, numpy, setuptools, pandas, six, pyjnius, android, kivy, pytz, requests, urllib3, chardet, python-dateutil, idna, certifi)>]
+[INFO]:    Of the existing distributions, the following meet the given requirements:
+[INFO]:         lottiedemo: min API 24, includes recipes (hostpython3, libbz2, libffi, liblzma, openssl, sdl2_image, sdl2_mixer, sdl2_ttf, sqlite3, python3, sdl2, numpy, setuptools, pandas, six, pyjnius, android, kivy, pytz, requests, urllib3, chardet, python-dateutil, idna, certifi), built for archs (armeabi-v7a)
+[INFO]:    lottiedemo has compatible recipes, using this one
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/dists/lottiedemo
+[DEBUG]:   Remove directory and subdirectory src/main/assets
+[DEBUG]:   Create directory src/main/assets
+Compiling '/home/lukas/p4a_pandas_test/.buildozer/android/app/main.py'...
+Compiling '/home/lukas/p4a_pandas_test/.buildozer/android/app/sitecustomize.py'...
+[DEBUG]:   Remove directory and subdirectory /tmp/p4a-extra-env-ke2ns5tt
+[DEBUG]:   Remove directory and subdirectory src/main/res
+[DEBUG]:   Create directory src/main/res/raw
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 1245, in <module>
+    main()
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android/pythonforandroid/entrypoints.py", line 18, in main
+    ToolchainCL()
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 677, in __init__
+    getattr(self, command)(args)
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 105, in wrapper_func
+    func(self, args, **kw)
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 1107, in apk
+    output, build_args = self._build_package(args, package_type='apk')
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 998, in _build_package
+    build_args = build.parse_args_and_make_package(
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/dists/lottiedemo/build.py", line 1082, in parse_args_and_make_package
+    make_package(args)
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/dists/lottiedemo/build.py", line 380, in make_package
+    shutil.copy(
+  File "/usr/lib/python3.10/shutil.py", line 417, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/usr/lib/python3.10/shutil.py", line 254, in copyfile
+    with open(src, 'rb') as fsrc:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/lukas/p4a_pandas_test/"42369-weather-wind.json"'
+No setup.py/pyproject.toml used, copying full private data into .apk.
+# Command failed: ['/usr/bin/python3', '-m', 'pythonforandroid.toolchain', 'apk', '--bootstrap', 'sdl2', '--dist_name', 'lottiedemo', '--name', 'Lottie Demo', '--version', '0.1', '--package', 'dev.tshirtman.lottiedemo', '--minsdk', '24', '--ndk-api', '24', '--private', '/home/lukas/p4a_pandas_test/.buildozer/android/app', '--android-entrypoint', 'org.kivy.android.PythonActivity', '--android-apptheme', '@android:style/Theme.NoTitleBar', '--presplash-lottie', '/home/lukas/p4a_pandas_test/"42369-weather-wind.json"', '--orientation', 'portrait', '--window', '--enable-androidx', '--copy-libs', '--depend', '"androidx.work:work-runtime:2.2.0"', '--depend', '"androidx.annotation:annotation:1.1.0"', '--arch', 'armeabi-v7a', '--color=always', '--storage-dir=/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a', '--ndk-api=24', '--ignore-setup-py', '--debug']
+# ENVIRONMENT:
+#     SHELL = '/bin/bash'
+#     WSL2_GUI_APPS_ENABLED = '1'
+#     WSL_DISTRO_NAME = 'Ubuntu'
+#     NAME = 'DESKTOP-DH3UIVG'
+#     PWD = '/home/lukas/p4a_pandas_test'
+#     LOGNAME = 'lukas'
+#     HOME = '/home/lukas'
+#     LANG = 'C.UTF-8'
+#     WSL_INTEROP = '/run/WSL/64932_interop'
+#     LS_COLORS = 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+#     WAYLAND_DISPLAY = 'wayland-0'
+#     LESSCLOSE = '/usr/bin/lesspipe %s %s'
+#     TERM = 'xterm-256color'
+#     LESSOPEN = '| /usr/bin/lesspipe %s'
+#     USER = 'lukas'
+#     DISPLAY = ':0'
+#     SHLVL = '1'
+#     XDG_RUNTIME_DIR = '/run/user/1000/'
+#     WSLENV = ''
+#     XDG_DATA_DIRS = '/usr/local/share:/usr/share:/var/lib/snapd/desktop'
+#     PATH = ('/home/lukas/.buildozer/android/platform/apache-ant-1.9.4/bin:/home/lukas/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program '
+ 'Files/WindowsApps/MicrosoftCorporationII.WindowsSubsystemForLinux_2.3.24.0_x64__8wekyb3d8bbwe:/mnt/c/Program '
+ 'Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common '
+ 'Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common '
+ 'Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program '
+ 'Files/Docker/Docker/resources/bin:/mnt/c/Program '
+ 'Files/Git/cmd:/mnt/c/Program Files (x86)/Java/jdk-22.0.1/bin:/mnt/c/Program '
+ 'Files (x86)/apache-maven-3.9.6/bin:/mnt/c/Program '
+ 'Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program '
+ 'Files/dotnet/:/mnt/c/Program Files/Microsoft SQL Server/Client '
+ 'SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL '
+ 'Server/150/Tools/Binn/:/mnt/c/Users/Lukas/AppData/Local/Programs/Python/Python312/Scripts/:/mnt/c/Users/Lukas/AppData/Local/Programs/Python/Python312/:/mnt/c/Users/Lukas/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/Lukas/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Lukas/AppData/Local/Programs/Microsoft '
+ 'VS Code/bin:/mnt/c/Program Files/JetBrains/PyCharm 2024.1/bin:/mnt/c/Program '
+ 'Files/JetBrains/IntelliJ IDEA '
+ '2024.1/bin:/mnt/c/Users/Lukas/AppData/Roaming/npm:/mnt/c/Users/Lukas/.dotnet/tools:/snap/bin:/home/lukas/.local/bin/:/home/lukas/Android/Sdk/cmdline-tools/cmdline-tools/bin')
+#     DBUS_SESSION_BUS_ADDRESS = 'unix:path=/run/user/1000/bus'
+#     HOSTTYPE = 'x86_64'
+#     PULSE_SERVER = 'unix:/mnt/wslg/PulseServer'
+#     _ = '/home/lukas/.local/bin/buildozer'
+#     PACKAGES_PATH = '/home/lukas/.buildozer/android/packages'
+#     ANDROIDSDK = '/home/lukas/.buildozer/android/platform/android-sdk'
+#     ANDROIDNDK = '/home/lukas/.buildozer/android/platform/android-ndk-r25b'
+#     ANDROIDAPI = '31'
+#     ANDROIDMINAPI = '24'
+#
+# Buildozer failed to execute the last command
+# The error might be hidden in the log above this error
+# Please read the full log, and search for it before
+# raising an issue with buildozer itself.
+# In case of a bug report, please add a full log with log_level = 2
