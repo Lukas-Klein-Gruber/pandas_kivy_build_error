@@ -1,0 +1,1516 @@
+# Check configuration tokens
+# `android.archs` not detected, instead `android.arch` is present.
+# `android.arch` will be removed and ignored in future.
+# If you're seeing this error, please migrate to `android.archs`.
+# Ensure build layout
+# Check configuration tokens
+# Preparing build
+# Check requirements for android
+# Search for Git (git)
+#  -> found at /usr/bin/git
+# Search for Cython (cython)
+#  -> found at /home/lukas/.local/bin/cython
+# Search for Java compiler (javac)
+#  -> found at /usr/lib/jvm/java-17-openjdk-amd64/bin/javac
+# Search for Java keytool (keytool)
+#  -> found at /usr/lib/jvm/java-17-openjdk-amd64/bin/keytool
+# Install platform
+# Run ['git', 'config', '--get', 'remote.origin.url']
+# Cwd /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+https://github.com/kivy/python-for-android.git
+# Run ['git', 'branch', '-vv']
+# Cwd /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+* develop 10c52926 [origin/develop] Merge pull request #3074 from autosportlabs/brent/private_github_repos
+# Run ['/usr/bin/python3', '-m', 'pip', 'install', '-q', '--user', 'appdirs', 'colorama>=0.3.3', 'jinja2', 'sh>=2, <3.0; sys_platform!="win32"', 'build', 'toml', 'packaging', 'setuptools', 'wheel~=0.43.0']
+# Cwd None
+# Apache ANT found at /home/lukas/.buildozer/android/platform/apache-ant-1.9.4
+# Android SDK found at /home/lukas/.buildozer/android/platform/android-sdk
+# Recommended android's NDK version by p4a is: 25b
+# Android NDK found at /home/lukas/.buildozer/android/platform/android-ndk-r25b
+# Run ['/usr/bin/python3', '-m', 'pythonforandroid.toolchain', 'aab', '-h', '--color=always', '--storage-dir=/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a', '--ndk-api=24', '--ignore-setup-py', '--debug']
+# Cwd /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[WARNING]: prerequisites.py is experimental and does not support all prerequisites yet.
+[WARNING]: Please report any issues to the python-for-android issue tracker.
+[WARNING]: prerequisites.py is experimental and does not support all prerequisites yet.
+[WARNING]: Please report any issues to the python-for-android issue tracker.
+usage: toolchain.py aab [-h] [--debug] [--color {always,never,auto}]
+                        [--sdk-dir SDK_DIR] [--ndk-dir NDK_DIR]
+                        [--android-api ANDROID_API]
+                        [--ndk-version NDK_VERSION] [--ndk-api NDK_API]
+                        [--symlink-bootstrap-files]
+                        [--storage-dir STORAGE_DIR] [--arch ARCH]
+                        [--dist-name DIST_NAME] [--requirements REQUIREMENTS]
+                        [--recipe-blacklist RECIPE_BLACKLIST]
+                        [--blacklist-requirements BLACKLIST_REQUIREMENTS]
+                        [--bootstrap BOOTSTRAP] [--hook HOOK] [--force-build]
+                        [--no-force-build] [--require-perfect-match]
+                        [--no-require-perfect-match] [--allow-replace-dist]
+                        [--no-allow-replace-dist]
+                        [--local-recipes LOCAL_RECIPES]
+                        [--activity-class-name ACTIVITY_CLASS_NAME]
+                        [--service-class-name SERVICE_CLASS_NAME]
+                        [--java-build-tool {auto,ant,gradle}] [--copy-libs]
+                        [--no-copy-libs] [--add-asset ASSETS]
+                        [--add-resource RESOURCES] [--private PRIVATE]
+                        [--use-setup-py] [--ignore-setup-py] [--release]
+                        [--with-debug-symbols] [--keystore KEYSTORE]
+                        [--signkey SIGNKEY] [--keystorepw KEYSTOREPW]
+                        [--signkeypw SIGNKEYPW]
+
+options:
+  -h, --help            show this help message and exit
+  --debug               Display debug output and all build info
+  --color {always,never,auto}
+                        Enable or disable color output (default enabled on
+                        tty)
+  --sdk-dir SDK_DIR, --sdk_dir SDK_DIR
+                        The filepath where the Android SDK is installed
+  --ndk-dir NDK_DIR, --ndk_dir NDK_DIR
+                        The filepath where the Android NDK is installed
+  --android-api ANDROID_API, --android_api ANDROID_API
+                        The Android API level to build against defaults to 33
+                        if not specified.
+  --ndk-version NDK_VERSION, --ndk_version NDK_VERSION
+                        DEPRECATED: the NDK version is now found automatically
+                        or not at all.
+  --ndk-api NDK_API     The Android API level to compile against. This should
+                        be your *minimal supported* API, not normally the same
+                        as your --android-api. Defaults to min(ANDROID_API,
+                        24) if not specified.
+  --symlink-bootstrap-files, --ssymlink_bootstrap_files
+                        If True, symlinks the bootstrap files creation. This
+                        is useful for development only, it could also cause
+                        weird problems.
+  --storage-dir STORAGE_DIR
+                        Primary storage directory for downloads and builds
+                        (default: /home/lukas/.local/share/python-for-android)
+  --arch ARCH           The archs to build for.
+  --dist-name DIST_NAME, --dist_name DIST_NAME
+                        The name of the distribution to use or create
+  --requirements REQUIREMENTS
+                        Dependencies of your app, should be recipe names or
+                        Python modules. NOT NECESSARY if you are using Python
+                        3 with --use-setup-py
+  --recipe-blacklist RECIPE_BLACKLIST
+                        Blacklist an internal recipe from use. Allows
+                        disabling Python 3 core modules to save size
+  --blacklist-requirements BLACKLIST_REQUIREMENTS
+                        Blacklist an internal recipe from use. Allows
+                        disabling Python 3 core modules to save size
+  --bootstrap BOOTSTRAP
+                        The bootstrap to build with. Leave unset to choose
+                        automatically.
+  --hook HOOK           Filename to a module that contains python-for-android
+                        hooks
+  --local-recipes LOCAL_RECIPES, --local_recipes LOCAL_RECIPES
+                        Directory to look for local recipes
+  --activity-class-name ACTIVITY_CLASS_NAME
+                        The full java class name of the main activity
+  --service-class-name SERVICE_CLASS_NAME
+                        Full java package name of the PythonService class
+  --java-build-tool {auto,ant,gradle}
+                        The java build tool to use when packaging the APK,
+                        defaults to automatically selecting an appropriate
+                        tool.
+  --add-asset ASSETS    Put this in the assets folder in the apk.
+  --add-resource RESOURCES
+                        Put this in the res folder in the apk.
+  --private PRIVATE     the directory with the app source code files
+                        (containing your main.py entrypoint)
+  --use-setup-py        Process the setup.py of a project if present.
+                        (Experimental!
+  --ignore-setup-py     Don't run the setup.py of a project if present. This
+                        may be required if the setup.py is not designed to
+                        work inside p4a (e.g. by installing dependencies that
+                        won't work or aren't desired on Android
+  --release             Build your app as a non-debug release build. (Disables
+                        gdb debugging among other things)
+  --with-debug-symbols  Will keep debug symbols from `.so` files.
+  --keystore KEYSTORE   Keystore for JAR signing key, will use jarsigner
+                        default if not specified (release build only)
+  --signkey SIGNKEY     Key alias to sign PARSER_APK. with (release build
+                        only)
+  --keystorepw KEYSTOREPW
+                        Password for keystore
+  --signkeypw SIGNKEYPW
+                        Password for key alias
+
+  Whether to force compilation of a new distribution
+
+  --force-build
+  --no-force-build      (this is the default)
+  --require-perfect-match
+  --no-require-perfect-match
+                        (this is the default)
+  --allow-replace-dist  (this is the default)
+  --no-allow-replace-dist
+  --copy-libs
+  --no-copy-libs        (this is the default)
+# Check application requirements
+# Compile platform
+# Run ['/usr/bin/python3', '-m', 'pythonforandroid.toolchain', 'create', '--dist_name=lottiedemo', '--bootstrap=sdl2', '--requirements=python3,kivy,pandas', '--arch=armeabi-v7a', '--copy-libs', '--color=always', '--storage-dir=/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a', '--ndk-api=24', '--ignore-setup-py', '--debug']
+# Cwd /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[WARNING]: prerequisites.py is experimental and does not support all prerequisites yet.
+[WARNING]: Please report any issues to the python-for-android issue tracker.
+[WARNING]: prerequisites.py is experimental and does not support all prerequisites yet.
+[WARNING]: Please report any issues to the python-for-android issue tracker.
+[INFO]:    Will compile for the following archs: armeabi-v7a
+[INFO]:    Found Android API target in $ANDROIDAPI: 28
+[WARNING]: Target API 28 < 30
+[WARNING]: Target APIs lower than 30 are no longer supported on Google Play, and are not recommended. Note that the Target API can be higher than your device Android version, and should usually be as high as possible.
+[INFO]:    Available Android APIs are (28, 31)
+[INFO]:    Requested API target 28 is available, continuing.
+[INFO]:    Found NDK dir in $ANDROIDNDK: /home/lukas/.buildozer/android/platform/android-ndk-r25b
+[INFO]:    Found NDK version 25b
+[INFO]:    Getting NDK API version (i.e. minimum supported API) from user argument
+[INFO]:    ccache is missing, the build will not be optimized in the future.
+[DEBUG]:   All possible dists: []
+[DEBUG]:   Dist matching name and arch: []
+[DEBUG]:   Dist matching ndk_api and recipe: []
+[INFO]:    No existing dists meet the given requirements!
+[DEBUG]:   Remove directory and subdirectory /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/dists/lottiedemo
+[INFO]:    No dist exists that meets your requirements, so one will be built.
+[INFO]:    Found a single valid recipe set: ['hostpython3', 'libbz2', 'libffi', 'liblzma', 'openssl', 'sdl2_image', 'sdl2_mixer', 'sdl2_ttf', 'sqlite3', 'python3', 'sdl2', 'numpy', 'setuptools', 'pandas', 'six', 'pyjnius', 'android', 'kivy']
+[INFO]:    The selected bootstrap is sdl2
+[INFO]:    # Creating dist with sdl2 bootstrap
+[INFO]:    Dist will have name lottiedemo and requirements (python3, kivy, pandas)
+[INFO]:    Dist contains the following requirements as recipes: ['hostpython3', 'libbz2', 'libffi', 'liblzma', 'openssl', 'sdl2_image', 'sdl2_mixer', 'sdl2_ttf', 'sqlite3', 'python3', 'sdl2', 'numpy', 'setuptools', 'pandas', 'six', 'pyjnius', 'android', 'kivy']
+[INFO]:    Dist will also contain modules (requests, chardet, idna, pytz, urllib3, python-dateutil, certifi) installed from pip
+[INFO]:    Dist will be build in mode debug
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[DEBUG]:   Create directory /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/dists/lottiedemo
+[INFO]:    Recipe build order is ['hostpython3', 'libbz2', 'libffi', 'liblzma', 'openssl', 'sdl2_image', 'sdl2_mixer', 'sdl2_ttf', 'sqlite3', 'python3', 'sdl2', 'numpy', 'setuptools', 'pandas', 'six', 'pyjnius', 'android', 'kivy']
+[INFO]:    The requirements (certifi, chardet, idna, python-dateutil, pytz, requests, urllib3) were not found as recipes, they will be installed with pip.
+[INFO]:    # Downloading recipes
+[INFO]:    Downloading hostpython3
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/packages/hostpython3
+[DEBUG]:   -> running basename https://www.python.org/ftp/python/3.11.5/Python-3.11.5.tgz
+[DEBUG]:        Python-3.11.5.tgz
+[INFO]:    hostpython3 download already cached, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Downloading libbz2
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/packages/libbz2
+[DEBUG]:   -> running basename https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz
+[DEBUG]:        bzip2-1.0.8.tar.gz
+[INFO]:    libbz2 download already cached, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Downloading libffi
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/packages/libffi
+[DEBUG]:   -> running basename https://github.com/libffi/libffi/archive/v3.4.2.tar.gz
+[DEBUG]:        v3.4.2.tar.gz
+[INFO]:    libffi download already cached, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Downloading liblzma
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/packages/liblzma
+[DEBUG]:   -> running basename https://tukaani.org/xz/xz-5.2.4.tar.gz
+[DEBUG]:        xz-5.2.4.tar.gz
+[INFO]:    liblzma download already cached, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Downloading openssl
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/packages/openssl
+[DEBUG]:   -> running basename https://www.openssl.org/source/openssl-1.1.1w.tar.gz
+[DEBUG]:        openssl-1.1.1w.tar.gz
+[INFO]:    openssl download already cached, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Downloading sdl2_image
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/packages/sdl2_image
+[DEBUG]:   -> running basename https://github.com/libsdl-org/SDL_image/releases/download/release-2.8.0/SDL2_image-2.8.0.tar.gz
+[DEBUG]:        SDL2_image-2.8.0.tar.gz
+[INFO]:    sdl2_image download already cached, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Downloading sdl2_mixer
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/packages/sdl2_mixer
+[DEBUG]:   -> running basename https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.6.3/SDL2_mixer-2.6.3.tar.gz
+[DEBUG]:        SDL2_mixer-2.6.3.tar.gz
+[INFO]:    sdl2_mixer download already cached, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Downloading sdl2_ttf
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/packages/sdl2_ttf
+[DEBUG]:   -> running basename https://github.com/libsdl-org/SDL_ttf/releases/download/release-2.20.2/SDL2_ttf-2.20.2.tar.gz
+[DEBUG]:        SDL2_ttf-2.20.2.tar.gz
+[INFO]:    sdl2_ttf download already cached, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Downloading sqlite3
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/packages/sqlite3
+[DEBUG]:   -> running basename https://www.sqlite.org/2021/sqlite-amalgamation-3350500.zip
+[DEBUG]:        sqlite-amalgamation-3350500.zip
+[INFO]:    sqlite3 download already cached, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Downloading python3
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/packages/python3
+[DEBUG]:   -> running basename https://www.python.org/ftp/python/3.11.5/Python-3.11.5.tgz
+[DEBUG]:        Python-3.11.5.tgz
+[INFO]:    python3 download already cached, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Downloading sdl2
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/packages/sdl2
+[DEBUG]:   -> running basename https://github.com/libsdl-org/SDL/releases/download/release-2.28.5/SDL2-2.28.5.tar.gz
+[DEBUG]:        SDL2-2.28.5.tar.gz
+[INFO]:    sdl2 download already cached, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Downloading numpy
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/packages/numpy
+[DEBUG]:   -> running basename git+https://github.com/numpy/numpy
+[DEBUG]:        numpy
+[DEBUG]:   Downloading numpy from git+https://github.com/numpy/numpy
+[DEBUG]:   -> running rm -f .mark-numpy
+[INFO]:    Downloading numpy from git+https://github.com/numpy/numpy
+[INFO]:    -> directory context numpy
+[DEBUG]:   -> running git fetch --tags --depth 1
+[DEBUG]:        remote: Enumerating objects: 303, done.
+remote: Counting objects: 100% (303/303), done.
+remote: Compressing objects: 100% (232/232), done.
+remote: Total 232 (delta 39), reused 174 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (232/232), 110.80 KiB | 2.13 MiB/s, done.
+Resolving deltas: 100% (39/39), completed with 15 local objects.
+[DEBUG]:   -> running git checkout v1.26.5
+[DEBUG]:        HEAD is now at 93fdebfc Merge pull request #26365 from charris/fix-cirrus
+[DEBUG]:   -> running git submodule update --recursive --init --depth 1
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/packages/numpy
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Downloading setuptools
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/packages/setuptools
+[DEBUG]:   -> running basename https://pypi.python.org/packages/source/s/setuptools/setuptools-69.2.0.tar.gz
+[DEBUG]:        setuptools-69.2.0.tar.gz
+[INFO]:    setuptools download already cached, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Downloading pandas
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/packages/pandas
+[DEBUG]:   -> running basename git+https://github.com/pandas-dev/pandas
+[DEBUG]:        pandas
+[DEBUG]:   Downloading pandas from git+https://github.com/pandas-dev/pandas
+[DEBUG]:   -> running rm -f .mark-pandas
+[INFO]:    Downloading pandas from git+https://github.com/pandas-dev/pandas
+[INFO]:    -> directory context pandas
+[DEBUG]:   -> running git fetch --tags --depth 1
+[DEBUG]:        remote: Enumerating objects: 347, done.
+remote: Counting objects: 100% (338/338), done.
+remote: Compressing objects: 100% (218/218), done.
+remote: Total 220 (delta 12), reused 196 (delta 2), pack-reused 0 (from 0)
+Receiving objects: 100% (220/220), 56.45 KiB | 39.00 KiB/s, done..00 KiB/s
+Resolving deltas: 100% (12/12), completed with 9 local objects.
+[DEBUG]:   -> running git checkout v2.2.1
+[DEBUG]:        HEAD is now at bdc79c14 RLS: 2.2.1
+[DEBUG]:   -> running git submodule update --recursive --init --depth 1
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/packages/pandas
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Downloading six
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/packages/six
+[DEBUG]:   -> running basename https://pypi.python.org/packages/source/s/six/six-1.15.0.tar.gz
+[DEBUG]:        six-1.15.0.tar.gz
+[INFO]:    six download already cached, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Downloading pyjnius
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/packages/pyjnius
+[DEBUG]:   -> running basename https://github.com/kivy/pyjnius/archive/1.6.1.zip
+[DEBUG]:        1.6.1.zip
+[INFO]:    pyjnius download already cached, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Downloading android
+[INFO]:    Skipping android download as no URL is set
+[INFO]:    Downloading kivy
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/packages/kivy
+[DEBUG]:   -> running basename https://github.com/kivy/kivy/archive/2.3.0.zip
+[DEBUG]:        2.3.0.zip
+[INFO]:    kivy download already cached, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    # Building all recipes for arch armeabi-v7a
+[INFO]:    # Unpacking recipes
+[INFO]:    Unpacking hostpython3 for armeabi-v7a
+[DEBUG]:   -> running basename https://www.python.org/ftp/python/3.11.5/Python-3.11.5.tgz
+[DEBUG]:        Python-3.11.5.tgz
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop
+[INFO]:    hostpython3 is already unpacked, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Unpacking libbz2 for armeabi-v7a
+[DEBUG]:   -> running basename https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz
+[DEBUG]:        bzip2-1.0.8.tar.gz
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/libbz2/armeabi-v7a__ndk_target_24
+[INFO]:    libbz2 is already unpacked, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Unpacking libffi for armeabi-v7a
+[DEBUG]:   -> running basename https://github.com/libffi/libffi/archive/v3.4.2.tar.gz
+[DEBUG]:        v3.4.2.tar.gz
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/libffi/armeabi-v7a__ndk_target_24
+[INFO]:    libffi is already unpacked, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Unpacking liblzma for armeabi-v7a
+[DEBUG]:   -> running basename https://tukaani.org/xz/xz-5.2.4.tar.gz
+[DEBUG]:        xz-5.2.4.tar.gz
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/liblzma/armeabi-v7a__ndk_target_24
+[INFO]:    liblzma is already unpacked, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Unpacking openssl for armeabi-v7a
+[DEBUG]:   -> running basename https://www.openssl.org/source/openssl-1.1.1w.tar.gz
+[DEBUG]:        openssl-1.1.1w.tar.gz
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/openssl/armeabi-v7a__ndk_target_24
+[INFO]:    openssl is already unpacked, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Unpacking sdl2_image for armeabi-v7a
+[DEBUG]:   -> running basename https://github.com/libsdl-org/SDL_image/releases/download/release-2.8.0/SDL2_image-2.8.0.tar.gz
+[DEBUG]:        SDL2_image-2.8.0.tar.gz
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni
+[INFO]:    sdl2_image is already unpacked, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Unpacking sdl2_mixer for armeabi-v7a
+[DEBUG]:   -> running basename https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.6.3/SDL2_mixer-2.6.3.tar.gz
+[DEBUG]:        SDL2_mixer-2.6.3.tar.gz
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni
+[INFO]:    sdl2_mixer is already unpacked, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Unpacking sdl2_ttf for armeabi-v7a
+[DEBUG]:   -> running basename https://github.com/libsdl-org/SDL_ttf/releases/download/release-2.20.2/SDL2_ttf-2.20.2.tar.gz
+[DEBUG]:        SDL2_ttf-2.20.2.tar.gz
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni
+[INFO]:    sdl2_ttf is already unpacked, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Unpacking sqlite3 for armeabi-v7a
+[DEBUG]:   -> running basename https://www.sqlite.org/2021/sqlite-amalgamation-3350500.zip
+[DEBUG]:        sqlite-amalgamation-3350500.zip
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/sqlite3/armeabi-v7a__ndk_target_24
+[INFO]:    sqlite3 is already unpacked, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Unpacking python3 for armeabi-v7a
+[DEBUG]:   -> running basename https://www.python.org/ftp/python/3.11.5/Python-3.11.5.tgz
+[DEBUG]:        Python-3.11.5.tgz
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/python3-libbz2-liblzma/armeabi-v7a__ndk_target_24
+[INFO]:    python3 is already unpacked, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Unpacking sdl2 for armeabi-v7a
+[DEBUG]:   -> running basename https://github.com/libsdl-org/SDL/releases/download/release-2.28.5/SDL2-2.28.5.tar.gz
+[DEBUG]:        SDL2-2.28.5.tar.gz
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/bootstrap_builds/sdl2/jni
+[INFO]:    sdl2 is already unpacked, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Unpacking numpy for armeabi-v7a
+[DEBUG]:   -> running basename git+https://github.com/numpy/numpy
+[DEBUG]:        numpy
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/numpy/armeabi-v7a__ndk_target_24
+[INFO]:    numpy is already unpacked, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Unpacking setuptools for armeabi-v7a
+[DEBUG]:   -> running basename https://pypi.python.org/packages/source/s/setuptools/setuptools-69.2.0.tar.gz
+[DEBUG]:        setuptools-69.2.0.tar.gz
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/setuptools/armeabi-v7a__ndk_target_24
+[INFO]:    setuptools is already unpacked, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Unpacking pandas for armeabi-v7a
+[DEBUG]:   -> running basename git+https://github.com/pandas-dev/pandas
+[DEBUG]:        pandas
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/pandas/armeabi-v7a__ndk_target_24
+[INFO]:    pandas is already unpacked, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Unpacking six for armeabi-v7a
+[DEBUG]:   -> running basename https://pypi.python.org/packages/source/s/six/six-1.15.0.tar.gz
+[DEBUG]:        six-1.15.0.tar.gz
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/six/armeabi-v7a__ndk_target_24
+[INFO]:    six is already unpacked, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Unpacking pyjnius for armeabi-v7a
+[DEBUG]:   -> running basename https://github.com/kivy/pyjnius/archive/1.6.1.zip
+[DEBUG]:        1.6.1.zip
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/pyjnius-sdl2/armeabi-v7a__ndk_target_24
+[INFO]:    pyjnius is already unpacked, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[DEBUG]:   Remove directory and subdirectory /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/android-sdl2/armeabi-v7a__ndk_target_24/android
+[DEBUG]:   -> running cp -a /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android/pythonforandroid/recipes/android/src /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/android-sdl2/armeabi-v7a__ndk_target_24/android
+[INFO]:    Unpacking kivy for armeabi-v7a
+[DEBUG]:   -> running basename https://github.com/kivy/kivy/archive/2.3.0.zip
+[DEBUG]:        2.3.0.zip
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/kivy/armeabi-v7a__ndk_target_24
+[INFO]:    kivy is already unpacked, skipping
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    # Prebuilding recipes
+[INFO]:    Prebuilding hostpython3 for armeabi-v7a
+[INFO]:    hostpython3 has no prebuild_armeabi_v7a, skipping
+[INFO]:    Applying patches for hostpython3[armeabi-v7a]
+[INFO]:    hostpython3 already patched, skipping
+[INFO]:    Prebuilding libbz2 for armeabi-v7a
+[INFO]:    libbz2 has no prebuild_armeabi_v7a, skipping
+[INFO]:    Applying patches for libbz2[armeabi-v7a]
+[INFO]:    libbz2 already patched, skipping
+[INFO]:    Prebuilding libffi for armeabi-v7a
+[INFO]:    libffi has no prebuild_armeabi_v7a, skipping
+[INFO]:    Applying patches for libffi[armeabi-v7a]
+[INFO]:    libffi already patched, skipping
+[INFO]:    Prebuilding liblzma for armeabi-v7a
+[INFO]:    liblzma has no prebuild_armeabi_v7a, skipping
+[INFO]:    Prebuilding openssl for armeabi-v7a
+[INFO]:    openssl has no prebuild_armeabi_v7a, skipping
+[INFO]:    Prebuilding sdl2_image for armeabi-v7a
+[INFO]:    sdl2_image has no prebuild_armeabi_v7a, skipping
+[INFO]:    Applying patches for sdl2_image[armeabi-v7a]
+[INFO]:    sdl2_image already patched, skipping
+[INFO]:    Prebuilding sdl2_mixer for armeabi-v7a
+[INFO]:    sdl2_mixer has no prebuild_armeabi_v7a, skipping
+[INFO]:    Prebuilding sdl2_ttf for armeabi-v7a
+[INFO]:    sdl2_ttf has no prebuild_armeabi_v7a, skipping
+[INFO]:    Prebuilding sqlite3 for armeabi-v7a
+[INFO]:    sqlite3 has no prebuild_armeabi_v7a, skipping
+[INFO]:    Prebuilding python3 for armeabi-v7a
+[INFO]:    python3 has no prebuild_armeabi_v7a, skipping
+[INFO]:    Applying patches for python3[armeabi-v7a]
+[INFO]:    python3 already patched, skipping
+[INFO]:    Prebuilding sdl2 for armeabi-v7a
+[INFO]:    sdl2 has no prebuild_armeabi_v7a, skipping
+[INFO]:    Prebuilding numpy for armeabi-v7a
+[INFO]:    numpy has no prebuild_armeabi_v7a, skipping
+[INFO]:    Prebuilding setuptools for armeabi-v7a
+[INFO]:    setuptools has no prebuild_armeabi_v7a, skipping
+[INFO]:    Prebuilding pandas for armeabi-v7a
+[INFO]:    pandas has no prebuild_armeabi_v7a, skipping
+[INFO]:    Applying patches for pandas[armeabi-v7a]
+[INFO]:    pandas already patched, skipping
+[INFO]:    Prebuilding six for armeabi-v7a
+[INFO]:    six has no prebuild_armeabi_v7a, skipping
+[INFO]:    Prebuilding pyjnius for armeabi-v7a
+[INFO]:    pyjnius has no prebuild_armeabi_v7a, skipping
+[INFO]:    Applying patches for pyjnius[armeabi-v7a]
+[INFO]:    pyjnius already patched, skipping
+[INFO]:    Prebuilding android for armeabi-v7a
+[INFO]:    android has no prebuild_armeabi_v7a, skipping
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/android-sdl2/armeabi-v7a__ndk_target_24/android
+[INFO]:    <- directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android
+[INFO]:    Prebuilding kivy for armeabi-v7a
+[INFO]:    kivy has no prebuild_armeabi_v7a, skipping
+[INFO]:    Applying patches for kivy[armeabi-v7a]
+[INFO]:    kivy already patched, skipping
+[INFO]:    # Building recipes
+[INFO]:    Building hostpython3 for armeabi-v7a
+[INFO]:    hostpython3 said it is already built, skipping
+[INFO]:    Building libbz2 for armeabi-v7a
+[INFO]:    libbz2 said it is already built, skipping
+[DEBUG]:   -> running cp /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/libbz2/armeabi-v7a__ndk_target_24/libbz2/libbz2.so /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/libs_collections/lottiedemo/armeabi-v7a
+[INFO]:    Building libffi for armeabi-v7a
+[INFO]:    libffi said it is already built, skipping
+[DEBUG]:   -> running cp /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/libffi/armeabi-v7a__ndk_target_24/libffi/.libs/libffi.so /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/libs_collections/lottiedemo/armeabi-v7a
+[INFO]:    Building liblzma for armeabi-v7a
+[INFO]:    liblzma said it is already built, skipping
+[DEBUG]:   -> running cp /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/liblzma/armeabi-v7a__ndk_target_24/liblzma/p4a_install/lib/liblzma.so /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/libs_collections/lottiedemo/armeabi-v7a
+[INFO]:    Building openssl for armeabi-v7a
+[INFO]:    openssl said it is already built, skipping
+[DEBUG]:   -> running cp /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/openssl/armeabi-v7a__ndk_target_24/openssl1.1/libcrypto1.1.so /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/openssl/armeabi-v7a__ndk_target_24/openssl1.1/libssl1.1.so /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/libs_collections/lottiedemo/armeabi-v7a
+[INFO]:    Building sdl2_image for armeabi-v7a
+[INFO]:    Building sdl2_mixer for armeabi-v7a
+[INFO]:    Building sdl2_ttf for armeabi-v7a
+[INFO]:    Building sqlite3 for armeabi-v7a
+[INFO]:    sqlite3 said it is already built, skipping
+[INFO]:    Building python3 for armeabi-v7a
+[INFO]:    python3 said it is already built, skipping
+[INFO]:    Building sdl2 for armeabi-v7a
+[INFO]:    sdl2 said it is already built, skipping
+[INFO]:    Building numpy for armeabi-v7a
+[INFO]:    numpy apparently isn't already in site-packages
+[INFO]:    Writing cross file at: /tmp/android.meson.cross
+[DEBUG]:   -> running pip install build[virtualenv] pip Cython>=3.0.6 ninja==1.11.1.1 meson==1.4.0 --target /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages --python-version 3.11.5 --only-binary=:all: --upgrade
+[DEBUG]:        Collecting build[virtualenv]
+[DEBUG]:          Using cached build-1.2.2.post1-py3-none-any.whl (22 kB)
+[DEBUG]:        Collecting pip
+[DEBUG]:          Using cached pip-24.3.1-py3-none-any.whl (1.8 MB)
+[DEBUG]:        Collecting Cython>=3.0.6
+[DEBUG]:          Using cached Cython-3.0.11-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.6 MB)
+[DEBUG]:        Collecting ninja==1.11.1.1
+[DEBUG]:          Using cached ninja-1.11.1.1-py2.py3-none-manylinux1_x86_64.manylinux_2_5_x86_64.whl (307 kB)
+[DEBUG]:        Collecting meson==1.4.0
+[DEBUG]:          Using cached meson-1.4.0-py3-none-any.whl (935 kB)
+[DEBUG]:        Collecting packaging>=19.1
+[DEBUG]:          Using cached packaging-24.1-py3-none-any.whl (53 kB)
+[DEBUG]:        Collecting pyproject_hooks
+[DEBUG]:          Using cached pyproject_hooks-1.2.0-py3-none-any.whl (10 kB)
+[DEBUG]:        Collecting tomli>=1.1.0
+[DEBUG]:          Using cached tomli-2.0.2-py3-none-any.whl (13 kB)
+[DEBUG]:        Collecting virtualenv>=20.0.35
+[DEBUG]:          Using cached virtualenv-20.27.1-py3-none-any.whl (3.1 MB)
+[DEBUG]:        Collecting platformdirs<5,>=3.9.1
+[DEBUG]:          Using cached platformdirs-4.3.6-py3-none-any.whl (18 kB)
+[DEBUG]:        Collecting distlib<1,>=0.3.7
+[DEBUG]:          Using cached distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+[DEBUG]:        Collecting filelock<4,>=3.12.2
+[DEBUG]:          Using cached filelock-3.16.1-py3-none-any.whl (16 kB)
+[DEBUG]:        Installing collected packages: ninja, distlib, tomli, pyproject_hooks, platformdirs, pip, packaging, meson, filelock, Cython, virtualenv, build
+[DEBUG]:        ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+[DEBUG]:        python-for-android 2024.1.21 requires sh<2.0,>=1.10; sys_platform != "win32", but you have sh 2.1.0 which is incompatible.
+[DEBUG]:        Successfully installed Cython-3.0.11 build-1.2.2.post1 distlib-0.3.9 filelock-3.16.1 meson-1.4.0 ninja-1.11.1.1 packaging-24.1 pip-24.3.1 platformdirs-4.3.6 pyproject_hooks-1.2.0 tomli-2.0.2 virtualenv-20.27.1
+[DEBUG]:   -> running cp /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/python3 /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/python3-libbz2-liblzma/armeabi-v7a__ndk_target_24/python3/android-build/python3
+[INFO]:    -> directory context /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/numpy/armeabi-v7a__ndk_target_24/numpy
+[DEBUG]:   -> running python3 -m build --wheel --config-setting builddir=/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/numpy/armeabi-v7a__ndk_target_24/numpy/p4a_android_build -Csetup-args=-Dblas=none -Csetup-args=-Dlapack=none -Csetup-args=--cross-file -Csetup-args=/tmp/android.meson.cross
+[DEBUG]:        * Creating isolated environment: venv+pip...
+[DEBUG]:        * Installing packages in isolated environment:
+[DEBUG]:          - Cython>=0.29.34,<3.1
+[DEBUG]:          - meson-python>=0.15.0,<0.16.0
+[DEBUG]:        * Getting build dependencies for wheel...
+[DEBUG]:        Ignoring "sys._home = value" override
+[DEBUG]:        * Installing packages in isolated environment:
+[DEBUG]:          - patchelf >= 0.11.0
+[DEBUG]:        > /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-
+[DEBUG]:          v7a/build/other_builds/python3-libbz2-liblzma/armeabi-
+[DEBUG]:          v7a__ndk_target_24/python3/android-build/python3 -m pip --python /tmp/build-
+[DEBUG]:          env-064rwb29/bin/python install --use-pep517 --no-warn-script-location --no-
+[DEBUG]:          compile -r /tmp/build-reqs-lcwic0gw.txt
+[DEBUG]:        < Collecting patchelf>=0.11.0 (from -r /tmp/build-reqs-lcwic0gw.txt (line 1))
+[DEBUG]:        <   Using cached patchelf-0.17.2.1.tar.gz (167 kB)
+[DEBUG]:        <   Installing build dependencies: started
+[DEBUG]:        <   Installing build dependencies: finished with status 'done'
+[DEBUG]:        <   Getting requirements to build wheel: started
+[DEBUG]:        <   Getting requirements to build wheel: finished with status 'done'
+[DEBUG]:        < Ignoring "sys._home = value" override
+[DEBUG]:        < ERROR: Exception:
+[DEBUG]:        < Traceback (most recent call last):
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_internal/cli/base_command.py", line 105, in
+[DEBUG]:          _run_wrapper
+[DEBUG]:        <     status = _inner_run()
+[DEBUG]:        <              ^^^^^^^^^^^^
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_internal/cli/base_command.py", line 96, in
+[DEBUG]:          _inner_run
+[DEBUG]:        <     return self.run(options, args)
+[DEBUG]:        <            ^^^^^^^^^^^^^^^^^^^^^^^
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_internal/cli/req_command.py", line 67, in
+[DEBUG]:          wrapper
+[DEBUG]:        <     return func(self, options, args)
+[DEBUG]:        <            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_internal/commands/install.py", line 379, in run
+[DEBUG]:        <     requirement_set = resolver.resolve(
+[DEBUG]:        <                       ^^^^^^^^^^^^^^^^^
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_internal/resolution/resolvelib/resolver.py",
+[DEBUG]:          line 95, in resolve
+[DEBUG]:        <     result = self._result = resolver.resolve(
+[DEBUG]:        <                             ^^^^^^^^^^^^^^^^^
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_vendor/resolvelib/resolvers.py", line 546, in
+[DEBUG]:          resolve
+[DEBUG]:        <     state = resolution.resolve(requirements, max_rounds=max_rounds)
+[DEBUG]:        <             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_vendor/resolvelib/resolvers.py", line 397, in
+[DEBUG]:          resolve
+[DEBUG]:        <     self._add_to_criteria(self.state.criteria, r, parent=None)
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_vendor/resolvelib/resolvers.py", line 173, in
+[DEBUG]:          _add_to_criteria
+[DEBUG]:        <     if not criterion.candidates:
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_vendor/resolvelib/structs.py", line 156, in
+[DEBUG]:          __bool__
+[DEBUG]:        <     return bool(self._sequence)
+[DEBUG]:        <            ^^^^^^^^^^^^^^^^^^^^
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-
+[DEBUG]:          packages/pip/_internal/resolution/resolvelib/found_candidates.py", line 174,
+[DEBUG]:          in __bool__
+[DEBUG]:        <     return any(self)
+[DEBUG]:        <            ^^^^^^^^^
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-
+[DEBUG]:          packages/pip/_internal/resolution/resolvelib/found_candidates.py", line 162,
+[DEBUG]:          in <genexpr>
+[DEBUG]:        <     return (c for c in iterator if id(c) not in self._incompatible_ids)
+[DEBUG]:        <            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-
+[DEBUG]:          packages/pip/_internal/resolution/resolvelib/found_candidates.py", line 53,
+[DEBUG]:          in _iter_built
+[DEBUG]:        <     candidate = func()
+[DEBUG]:        <                 ^^^^^^
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_internal/resolution/resolvelib/factory.py",
+[DEBUG]:          line 187, in _make_candidate_from_link
+[DEBUG]:        <     base: Optional[BaseCandidate] = self._make_base_candidate_from_link(
+[DEBUG]:        <                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_internal/resolution/resolvelib/factory.py",
+[DEBUG]:          line 233, in _make_base_candidate_from_link
+[DEBUG]:        <     self._link_candidate_cache[link] = LinkCandidate(
+[DEBUG]:        <                                        ^^^^^^^^^^^^^^
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_internal/resolution/resolvelib/candidates.py",
+[DEBUG]:          line 304, in __init__
+[DEBUG]:        <     super().__init__(
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_internal/resolution/resolvelib/candidates.py",
+[DEBUG]:          line 159, in __init__
+[DEBUG]:        <     self.dist = self._prepare()
+[DEBUG]:        <                 ^^^^^^^^^^^^^^^
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_internal/resolution/resolvelib/candidates.py",
+[DEBUG]:          line 236, in _prepare
+[DEBUG]:        <     dist = self._prepare_distribution()
+[DEBUG]:        <            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_internal/resolution/resolvelib/candidates.py",
+[DEBUG]:          line 315, in _prepare_distribution
+[DEBUG]:        <     return preparer.prepare_linked_requirement(self._ireq,
+[DEBUG]:          parallel_builds=True)
+[DEBUG]:        < ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_internal/operations/prepare.py", line 527, in
+[DEBUG]:          prepare_linked_requirement
+[DEBUG]:        <     return self._prepare_linked_requirement(req, parallel_builds)
+[DEBUG]:        <            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_internal/operations/prepare.py", line 642, in
+[DEBUG]:          _prepare_linked_requirement
+[DEBUG]:        <     dist = _get_prepared_distribution(
+[DEBUG]:        <            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_internal/operations/prepare.py", line 72, in
+[DEBUG]:          _get_prepared_distribution
+[DEBUG]:        <     abstract_dist.prepare_distribution_metadata(
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_internal/distributions/sdist.py", line 56, in
+[DEBUG]:          prepare_distribution_metadata
+[DEBUG]:        <     self._install_build_reqs(finder)
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_internal/distributions/sdist.py", line 126, in
+[DEBUG]:          _install_build_reqs
+[DEBUG]:        <     build_reqs = self._get_build_requires_wheel()
+[DEBUG]:        <                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_internal/distributions/sdist.py", line 103, in
+[DEBUG]:          _get_build_requires_wheel
+[DEBUG]:        <     return backend.get_requires_for_build_wheel()
+[DEBUG]:        <            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_internal/utils/misc.py", line 701, in
+[DEBUG]:          get_requires_for_build_wheel
+[DEBUG]:        <     return super().get_requires_for_build_wheel(config_settings=cs)
+[DEBUG]:        <            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_vendor/pyproject_hooks/_impl.py", line 166, in
+[DEBUG]:          get_requires_for_build_wheel
+[DEBUG]:        <     return self._call_hook('get_requires_for_build_wheel', {
+[DEBUG]:        <            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-packages/pip/_vendor/pyproject_hooks/_impl.py", line 321, in
+[DEBUG]:          _call_hook
+[DEBUG]:        <     raise BackendUnavailable(data.get('traceback', ''))
+[DEBUG]:        < pip._vendor.pyproject_hooks._impl.BackendUnavailable: Traceback (most recent
+[DEBUG]:          call last):
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+[DEBUG]:          armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+[DEBUG]:          build/Lib/site-
+[DEBUG]:          packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 77,
+[DEBUG]:          in _build_backend
+[DEBUG]:        <     obj = import_module(mod_path)
+[DEBUG]:        <           ^^^^^^^^^^^^^^^^^^^^^^^
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeab
+[DEBUG]:          i-
+[DEBUG]:          v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/importlib/__init_
+[DEBUG]:          _.py", line 126, in import_module
+[DEBUG]:        <     return _bootstrap._gcd_import(name[level:], package, level)
+[DEBUG]:        <            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[DEBUG]:        <   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+[DEBUG]:        <   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+[DEBUG]:        <   File "<frozen importlib._bootstrap>", line 1126, in
+[DEBUG]:          _find_and_load_unlocked
+[DEBUG]:        <   File "<frozen importlib._bootstrap>", line 241, in
+[DEBUG]:          _call_with_frames_removed
+[DEBUG]:        <   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+[DEBUG]:        <   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+[DEBUG]:        <   File "<frozen importlib._bootstrap>", line 1147, in
+[DEBUG]:          _find_and_load_unlocked
+[DEBUG]:        <   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+[DEBUG]:        <   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+[DEBUG]:        <   File "<frozen importlib._bootstrap>", line 241, in
+[DEBUG]:          _call_with_frames_removed
+[DEBUG]:        <   File "/tmp/pip-build-env-nd5bnm_a/overlay/lib/python3.11/site-
+[DEBUG]:          packages/setuptools/__init__.py", line 22, in <module>
+[DEBUG]:        <     import _distutils_hack.override  # noqa: F401
+[DEBUG]:        <     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[DEBUG]:        <   File "/tmp/pip-build-env-nd5bnm_a/overlay/lib/python3.11/site-
+[DEBUG]:          packages/_distutils_hack/override.py", line 1, in <module>
+[DEBUG]:        <     __import__('_distutils_hack').do_override()
+[DEBUG]:        <   File "/tmp/pip-build-env-nd5bnm_a/overlay/lib/python3.11/site-
+[DEBUG]:          packages/_distutils_hack/__init__.py", line 90, in do_override
+[DEBUG]:        <     ensure_local_distutils()
+[DEBUG]:        <   File "/tmp/pip-build-env-nd5bnm_a/overlay/lib/python3.11/site-
+[DEBUG]:          packages/_distutils_hack/__init__.py", line 73, in ensure_local_distutils
+[DEBUG]:        <     importlib.import_module('distutils')
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeab
+[DEBUG]:          i-
+[DEBUG]:          v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/importlib/__init_
+[DEBUG]:          _.py", line 126, in import_module
+[DEBUG]:        <     return _bootstrap._gcd_import(name[level:], package, level)
+[DEBUG]:        <            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[DEBUG]:        <   File "/tmp/pip-build-env-nd5bnm_a/overlay/lib/python3.11/site-
+[DEBUG]:          packages/_distutils_hack/__init__.py", line 110, in find_spec
+[DEBUG]:        <     return method()
+[DEBUG]:        <            ^^^^^^^^
+[DEBUG]:        <   File "/tmp/pip-build-env-nd5bnm_a/overlay/lib/python3.11/site-
+[DEBUG]:          packages/_distutils_hack/__init__.py", line 117, in spec_for_distutils
+[DEBUG]:        <     import importlib.abc
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeab
+[DEBUG]:          i-
+[DEBUG]:          v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/importlib/abc.py"
+[DEBUG]:          , line 19, in <module>
+[DEBUG]:        <     from .resources.abc import ResourceReader, Traversable,
+[DEBUG]:          TraversableResources
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeab
+[DEBUG]:          i-
+[DEBUG]:          v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/importlib/resourc
+[DEBUG]:          es/__init__.py", line 3, in <module>
+[DEBUG]:        <     from ._common import (
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeab
+[DEBUG]:          i-
+[DEBUG]:          v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/importlib/resourc
+[DEBUG]:          es/_common.py", line 3, in <module>
+[DEBUG]:        <     import tempfile
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeab
+[DEBUG]:          i-v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/tempfile.py",
+[DEBUG]:          line 45, in <module>
+[DEBUG]:        <     from random import Random as _Random
+[DEBUG]:        <   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeab
+[DEBUG]:          i-v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/random.py",
+[DEBUG]:          line 49, in <module>
+[DEBUG]:        <     from math import log as _log, exp as _exp, pi as _pi, e as _e, ceil as
+[DEBUG]:          _ceil
+[DEBUG]:        < ModuleNotFoundError: No module named 'math'
+[DEBUG]:
+[DEBUG]:
+[DEBUG]:        Traceback (most recent call last):
+[DEBUG]:          File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/__main__.py", line 178, in _handle_build_error
+[DEBUG]:            yield
+[DEBUG]:          File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/__main__.py", line 429, in main
+[DEBUG]:            built = build_call(
+[DEBUG]:                    ^^^^^^^^^^^
+[DEBUG]:          File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/__main__.py", line 238, in build_package
+[DEBUG]:            out = _build(isolation, srcdir, outdir, distribution, config_settings, skip_dependency_check, installer)
+[DEBUG]:                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[DEBUG]:          File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/__main__.py", line 170, in _build
+[DEBUG]:            return _build_in_isolated_env(srcdir, outdir, distribution, config_settings, installer)
+[DEBUG]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[DEBUG]:          File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/__main__.py", line 137, in _build_in_isolated_env
+[DEBUG]:            env.install(builder.get_requires_for_build(distribution, config_settings or {}))
+[DEBUG]:          File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/env.py", line 136, in install
+[DEBUG]:            self._env_backend.install_requirements(requirements)
+[DEBUG]:          File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/env.py", line 265, in install_requirements
+[DEBUG]:            run_subprocess(cmd)
+[DEBUG]:          File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/_ctx.py", line 71, in run_subprocess
+[DEBUG]:            subprocess.run(cmd, capture_output=True, check=True, env=env)
+[DEBUG]:          File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/subprocess.py", line 571, in run
+[DEBUG]:            raise CalledProcessError(retcode, process.args,
+[DEBUG]:        subprocess.CalledProcessError: Command '['/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/python3-libbz2-liblzma/armeabi-v7a__ndk_target_24/python3/android-build/python3', '-m', 'pip', '--python', '/tmp/build-env-064rwb29/bin/python', 'install', '--use-pep517', '--no-warn-script-location', '--no-compile', '-r', '/tmp/build-reqs-lcwic0gw.txt']' returned non-zero exit status 2.
+[DEBUG]:
+[DEBUG]:        ERROR Command '['/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/python3-libbz2-liblzma/armeabi-v7a__ndk_target_24/python3/android-build/python3', '-m', 'pip', '--python', '/tmp/build-env-064rwb29/bin/python', 'install', '--use-pep517', '--no-warn-script-location', '--no-compile', '-r', '/tmp/build-reqs-lcwic0gw.txt']' returned non-zero exit status 2.
+Exception in thread background thread for pid 61896:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/lukas/.local/lib/python3.10/site-packages/sh.py", line 1634, in wrap
+    fn(*rgs, **kwargs)
+  File "/home/lukas/.local/lib/python3.10/site-packages/sh.py", line 2636, in background_thread
+    handle_exit_code(exit_code)
+  File "/home/lukas/.local/lib/python3.10/site-packages/sh.py", line 2327, in fn
+    return self.command.handle_command_exit_code(exit_code)
+  File "/home/lukas/.local/lib/python3.10/site-packages/sh.py", line 821, in handle_command_exit_code
+    raise exc
+sh.ErrorReturnCode_1:
+
+  RAN: /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/python3-libbz2-liblzma/armeabi-v7a__ndk_target_24/python3/android-build/python3 -m build --wheel --config-setting builddir=/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/numpy/armeabi-v7a__ndk_target_24/numpy/p4a_android_build -Csetup-args=-Dblas=none -Csetup-args=-Dlapack=none -Csetup-args=--cross-file -Csetup-args=/tmp/android.meson.cross
+
+  STDOUT:
+* Creating isolated environment: venv+pip...
+* Installing packages in isolated environment:
+  - Cython>=0.29.34,<3.1
+  - meson-python>=0.15.0,<0.16.0
+* Getting build dependencies for wheel...
+Ignoring "sys._home = value" override
+* Installing packages in isolated environment:
+  - patchelf >= 0.11.0
+> /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-
+  v7a/build/other_builds/python3-libbz2-liblzma/armeabi-
+  v7a__ndk_target_24/python3/android-build/python3 -m pip --python /tmp/build-
+  env-064rwb29/bin/python install --use-pep517 --no-warn-script-location --no-
+  compile -r /tmp/build-reqs-lcwic0gw.txt
+< Collecting patchelf>=0.11.0 (from -r /tmp/build-reqs-lcwic0gw.txt (line 1))
+<   Using cached patchelf-0.17.2.1.tar.gz (167 kB)
+<   Installing build dependencies: started
+<   Installing build dependencies: finished with status 'done'
+<   Getting requirements to build wheel: started
+<   Getting requirements to build wheel: finished with status 'done'
+< Ignoring "sys._home = value" override
+< ERROR: Exception:
+< Traceback (most recent call last):
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/cli/base_command.py", line 105, in
+  _run_wrapper
+<     status = _inner_run()
+<              ^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/cli/base_command.py", line 96, in
+  _inner_run
+<     return self.run(options, args)
+<            ^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/cli/req_command.py", line 67, in
+  wrapper
+<     return func(self, options, args)
+<            ^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/commands/install.py", line 379, in run
+<     requirement_set = resolver.resolve(
+<                       ^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/resolution/resolvelib/resolver.py",
+  line 95, in resolve
+<     result = self._result = resolver.resolve(
+<                             ^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_vendor/resolvelib/resolvers.py", line 546, in
+  resolve
+<     state = resolution.resolve(requirements, max_rounds=max_rounds)
+<             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_vendor/resolvelib/resolvers.py", line 397, in
+  resolve
+<     self._add_to_criteria(self.state.criteria, r, parent=None)
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_vendor/resolvelib/resolvers.py", line 173, in
+  _add_to_criteria
+<     if not criterion.candidates:
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_vendor/resolvelib/structs.py", line 156, in
+  __bool__
+<     return bool(self._sequence)
+<            ^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-
+  packages/pip/_internal/resolution/resolvelib/found_candidates.py", line 174,
+  in __bool__
+<     return any(self)
+<            ^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-
+  packages/pip/_internal/resolution/resolvelib/found_candidates.py", line 162,
+  in <genexpr>
+<     return (c for c in iterator if id(c) not in self._incompatible_ids)
+<            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-
+  packages/pip/_internal/resolution/resolvelib/found_candidates.py", line 53,
+  in _iter_built
+<     candidate = func()
+<                 ^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/resolution/resolvelib/factory.py",
+  line 187, in _make_candidate_from_link
+<     base: Optional[BaseCandidate] = self._make_base_candidate_from_link(
+<                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/resolution/resolvelib/factory.py",
+  line 233, in _make_base_candidate_from_link
+<     self._link_candidate_cache[link] = LinkCandidate(
+<                                        ^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/resolution/resolvelib/candidates.py",
+  line 304, in __init__
+<     super().__init__(
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/resolution/resolvelib/candidates.py",
+  line 159, in __init__
+<     self.dist = self._prepare()
+<                 ^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/resolution/resolvelib/candidates.py",
+  line 236, in _prepare
+<     dist = self._prepare_distribution()
+<            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/resolution/resolvelib/candidates.py",
+  line 315, in _prepare_distribution
+<     return preparer.prepare_linked_requirement(self._ireq,
+  parallel_builds=True)
+< ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/operations/prepare.py", line 527, in
+  prepare_linked_requirement
+<     return self._prepare_linked_requirement(req, parallel_builds)
+<            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/operations/prepare.py", line 642, in
+  _prepare_linked_requirement
+<     dist = _get_prepared_distribution(
+<            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/operations/prepare.py", line 72, in
+  _get_prepared_distribution
+<     abstract_dist.prepare_distribution_metadata(
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/distributions/sdist.py", line 56, in
+  prepare_distribution_metadata
+<     self._install_build_reqs(finder)
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/distributions/sdist.py", line 126, in
+  _install_build_reqs
+<     build_reqs = self._get_build_requires_wheel()
+<                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/distributions/sdist.py", line 103, in
+  _get_build_requires_wheel
+<     return backend.get_requires_for_build_wheel()
+<            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/utils/misc.py", line 701, in
+  get_requires_for_build_wheel
+<     return super().get_requires_for_build_wheel(config_settings=cs)
+<            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_vendor/pyproject_hooks/_impl.py", line 166, in
+  get_requires_for_build_wheel
+<     return self._call_hook('get_requires_for_build_wheel', {
+<            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_vendor/pyproject_hooks/_impl.py", line 321, in
+  _call_hook
+<     raise BackendUnavailable(data.get('traceback', ''))
+< pip._vendor.pyproject_hooks._impl.BackendUnavailable: Traceback (most recent
+  call last):
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-
+  packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 77,
+  in _build_backend
+<     obj = import_module(mod_path)
+<           ^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeab
+  i-
+  v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/importlib/__init_
+  _.py", line 126, in import_module
+<     return _bootstrap._gcd_import(name[level:], package, level)
+<            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+<   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+<   File "<frozen importlib._bootstrap>", line 1126, in
+  _find_and_load_unlocked
+<   File "<frozen importlib._bootstrap>", line 241, in
+  _call_with_frames_removed
+<   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+<   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+<   File "<frozen importlib._bootstrap>", line 1147, in
+  _find_and_load_unlocked
+<   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+<   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+<   File "<frozen importlib._bootstrap>", line 241, in
+  _call_with_frames_removed
+<   File "/tmp/pip-build-env-nd5bnm_a/overlay/lib/python3.11/site-
+  packages/setuptools/__init__.py", line 22, in <module>
+<     import _distutils_hack.override  # noqa: F401
+<     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/tmp/pip-build-env-nd5bnm_a/overlay/lib/python3.11/site-
+  packages/_distutils_hack/override.py", line 1, in <module>
+<     __import__('_distutils_hack').do_override()
+<   File "/tmp/pip-build-env-nd5bnm_a/overlay/lib/python3.11/site-
+  packages/_distutils_hack/__init__.py", line 90, in do_override
+<     ensure_local_distutils()
+<   File "/tmp/pip-build-env-nd5bnm_a/overlay/lib/python3.11/site-
+  packages/_distutils_hack/__init__.py", line 73, in ensure_local_distutils
+<     importlib.import_module('distutils')
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeab
+  i-
+  v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/importlib/__init_
+  _.py", line 126, in import_module
+<     return _bootstrap._gcd_import(name[level:], package, level)
+<            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/tmp/pip-build-env-nd5bnm_a/overlay/lib/python3.11/site-
+  packages/_distutils_hack/__init__.py", line 110, in find_spec
+<     return method()
+<            ^^^^^^^^
+<   File "/tmp/pip-build-env-nd5bnm_a/overlay/lib/python3.11/site-
+  packages/_distutils_hack/__init__.py", line 117, in spec_for_distutils
+<     import importlib.abc
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeab
+  i-
+  v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/importlib/abc.py"
+  , line 19, in <module>
+<     from .resources.abc import ResourceReader, Traversable,
+  TraversableResources
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeab
+  i-
+  v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/importlib/resourc
+  es/__init__.py", line 3, in <module>
+<     from ._common import (
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeab
+  i-
+  v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/importlib/resourc
+  es/_common.py", line 3, in <module>
+<     import tempfile
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeab
+  i-v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/tempfile.py",
+  line 45, in <module>
+<     from random import Random as _Random
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeab
+  i-v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/random.py",
+  line 49, in <module>
+<     from math import log as _log, exp as _exp, pi as _pi, e as _e, ceil as
+  _ceil
+< ModuleNotFoundError: No module named 'math'
+
+
+Traceback (most recent call last):
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/__main__.py", line 178, in _handle_build_error
+    yield
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/__main__.py", line 429, in main
+    built = build_call(
+            ^^^^^^^^^^^
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/__main__.py", line 238, in build_package
+    out = _build(isolation, srcdir, outdir, distribution, config_settings, skip_dependency_check, installer)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/__main__.py", line 170, in _build
+    return _build_in_isolated_env(srcdir, outdir, distribution, config_settings, installer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/__main__.py", line 137, in _build_in_isolated_env
+    env.install(builder.get_requires_for_build(distribution, config_settings or {}))
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/env.py", line 136, in install
+    self._env_backend.install_requirements(requirements)
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/env.py", line 265, in install_requirements
+    run_subprocess(cmd)
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/_ctx.py", line 71, in run_subprocess
+    subprocess.run(cmd, capture_output=True, check=True, env=env)
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/python3-libbz2-liblzma/armeabi-v7a__ndk_target_24/python3/android-build/python3', '-m', 'pip', '--python', '/tmp/build-env-064rwb29/bin/python', 'install', '--use-pep517', '--no-warn-script-location', '--no-compile', '-r', '/tmp/build-reqs-lcwic0gw.txt']' returned non-zero exit status 2.
+
+ERROR Command '['/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/python3-libbz2-liblzma/armeabi-v7a__ndk_target_24/python3/android-build/python3', '-m', 'pip', '--python', '/tmp/build-env-064rwb29/bin/python', 'install', '--use-pep517', '--no-warn-script-location', '--no-compile', '-r', '/tmp/build-reqs-lcwic0gw.txt']' returned non-zero exit status 2.
+
+
+  STDERR:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 1245, in <module>
+    main()
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android/pythonforandroid/entrypoints.py", line 18, in main
+    ToolchainCL()
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 677, in __init__
+    getattr(self, command)(args)
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 104, in wrapper_func
+    build_dist_from_args(ctx, dist, args)
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android/pythonforandroid/toolchain.py", line 163, in build_dist_from_args
+    build_recipes(build_order, python_modules, ctx,
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android/pythonforandroid/build.py", line 504, in build_recipes
+    recipe.build_arch(arch)
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android/pythonforandroid/recipes/numpy/__init__.py", line 47, in build_arch
+    super().build_arch(arch)
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android/pythonforandroid/recipe.py", line 1375, in build_arch
+    super().build_arch(arch)
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android/pythonforandroid/recipe.py", line 1281, in build_arch
+    shprint(
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/python-for-android/pythonforandroid/logger.py", line 167, in shprint
+    for line in output:
+  File "/home/lukas/.local/lib/python3.10/site-packages/sh.py", line 877, in __next__
+    self.wait()
+  File "/home/lukas/.local/lib/python3.10/site-packages/sh.py", line 794, in wait
+    self.handle_command_exit_code(exit_code)
+  File "/home/lukas/.local/lib/python3.10/site-packages/sh.py", line 821, in handle_command_exit_code
+    raise exc
+sh.ErrorReturnCode_1:
+
+  RAN: /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/python3-libbz2-liblzma/armeabi-v7a__ndk_target_24/python3/android-build/python3 -m build --wheel --config-setting builddir=/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/numpy/armeabi-v7a__ndk_target_24/numpy/p4a_android_build -Csetup-args=-Dblas=none -Csetup-args=-Dlapack=none -Csetup-args=--cross-file -Csetup-args=/tmp/android.meson.cross
+
+  STDOUT:
+* Creating isolated environment: venv+pip...
+* Installing packages in isolated environment:
+  - Cython>=0.29.34,<3.1
+  - meson-python>=0.15.0,<0.16.0
+* Getting build dependencies for wheel...
+Ignoring "sys._home = value" override
+* Installing packages in isolated environment:
+  - patchelf >= 0.11.0
+> /home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-
+  v7a/build/other_builds/python3-libbz2-liblzma/armeabi-
+  v7a__ndk_target_24/python3/android-build/python3 -m pip --python /tmp/build-
+  env-064rwb29/bin/python install --use-pep517 --no-warn-script-location --no-
+  compile -r /tmp/build-reqs-lcwic0gw.txt
+< Collecting patchelf>=0.11.0 (from -r /tmp/build-reqs-lcwic0gw.txt (line 1))
+<   Using cached patchelf-0.17.2.1.tar.gz (167 kB)
+<   Installing build dependencies: started
+<   Installing build dependencies: finished with status 'done'
+<   Getting requirements to build wheel: started
+<   Getting requirements to build wheel: finished with status 'done'
+< Ignoring "sys._home = value" override
+< ERROR: Exception:
+< Traceback (most recent call last):
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/cli/base_command.py", line 105, in
+  _run_wrapper
+<     status = _inner_run()
+<              ^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/cli/base_command.py", line 96, in
+  _inner_run
+<     return self.run(options, args)
+<            ^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/cli/req_command.py", line 67, in
+  wrapper
+<     return func(self, options, args)
+<            ^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/commands/install.py", line 379, in run
+<     requirement_set = resolver.resolve(
+<                       ^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/resolution/resolvelib/resolver.py",
+  line 95, in resolve
+<     result = self._result = resolver.resolve(
+<                             ^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_vendor/resolvelib/resolvers.py", line 546, in
+  resolve
+<     state = resolution.resolve(requirements, max_rounds=max_rounds)
+<             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_vendor/resolvelib/resolvers.py", line 397, in
+  resolve
+<     self._add_to_criteria(self.state.criteria, r, parent=None)
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_vendor/resolvelib/resolvers.py", line 173, in
+  _add_to_criteria
+<     if not criterion.candidates:
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_vendor/resolvelib/structs.py", line 156, in
+  __bool__
+<     return bool(self._sequence)
+<            ^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-
+  packages/pip/_internal/resolution/resolvelib/found_candidates.py", line 174,
+  in __bool__
+<     return any(self)
+<            ^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-
+  packages/pip/_internal/resolution/resolvelib/found_candidates.py", line 162,
+  in <genexpr>
+<     return (c for c in iterator if id(c) not in self._incompatible_ids)
+<            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-
+  packages/pip/_internal/resolution/resolvelib/found_candidates.py", line 53,
+  in _iter_built
+<     candidate = func()
+<                 ^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/resolution/resolvelib/factory.py",
+  line 187, in _make_candidate_from_link
+<     base: Optional[BaseCandidate] = self._make_base_candidate_from_link(
+<                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/resolution/resolvelib/factory.py",
+  line 233, in _make_base_candidate_from_link
+<     self._link_candidate_cache[link] = LinkCandidate(
+<                                        ^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/resolution/resolvelib/candidates.py",
+  line 304, in __init__
+<     super().__init__(
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/resolution/resolvelib/candidates.py",
+  line 159, in __init__
+<     self.dist = self._prepare()
+<                 ^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/resolution/resolvelib/candidates.py",
+  line 236, in _prepare
+<     dist = self._prepare_distribution()
+<            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/resolution/resolvelib/candidates.py",
+  line 315, in _prepare_distribution
+<     return preparer.prepare_linked_requirement(self._ireq,
+  parallel_builds=True)
+< ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/operations/prepare.py", line 527, in
+  prepare_linked_requirement
+<     return self._prepare_linked_requirement(req, parallel_builds)
+<            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/operations/prepare.py", line 642, in
+  _prepare_linked_requirement
+<     dist = _get_prepared_distribution(
+<            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/operations/prepare.py", line 72, in
+  _get_prepared_distribution
+<     abstract_dist.prepare_distribution_metadata(
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/distributions/sdist.py", line 56, in
+  prepare_distribution_metadata
+<     self._install_build_reqs(finder)
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/distributions/sdist.py", line 126, in
+  _install_build_reqs
+<     build_reqs = self._get_build_requires_wheel()
+<                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/distributions/sdist.py", line 103, in
+  _get_build_requires_wheel
+<     return backend.get_requires_for_build_wheel()
+<            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_internal/utils/misc.py", line 701, in
+  get_requires_for_build_wheel
+<     return super().get_requires_for_build_wheel(config_settings=cs)
+<            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_vendor/pyproject_hooks/_impl.py", line 166, in
+  get_requires_for_build_wheel
+<     return self._call_hook('get_requires_for_build_wheel', {
+<            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-packages/pip/_vendor/pyproject_hooks/_impl.py", line 321, in
+  _call_hook
+<     raise BackendUnavailable(data.get('traceback', ''))
+< pip._vendor.pyproject_hooks._impl.BackendUnavailable: Traceback (most recent
+  call last):
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-
+  armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-
+  build/Lib/site-
+  packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 77,
+  in _build_backend
+<     obj = import_module(mod_path)
+<           ^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeab
+  i-
+  v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/importlib/__init_
+  _.py", line 126, in import_module
+<     return _bootstrap._gcd_import(name[level:], package, level)
+<            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+<   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+<   File "<frozen importlib._bootstrap>", line 1126, in
+  _find_and_load_unlocked
+<   File "<frozen importlib._bootstrap>", line 241, in
+  _call_with_frames_removed
+<   File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+<   File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+<   File "<frozen importlib._bootstrap>", line 1147, in
+  _find_and_load_unlocked
+<   File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+<   File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+<   File "<frozen importlib._bootstrap>", line 241, in
+  _call_with_frames_removed
+<   File "/tmp/pip-build-env-nd5bnm_a/overlay/lib/python3.11/site-
+  packages/setuptools/__init__.py", line 22, in <module>
+<     import _distutils_hack.override  # noqa: F401
+<     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/tmp/pip-build-env-nd5bnm_a/overlay/lib/python3.11/site-
+  packages/_distutils_hack/override.py", line 1, in <module>
+<     __import__('_distutils_hack').do_override()
+<   File "/tmp/pip-build-env-nd5bnm_a/overlay/lib/python3.11/site-
+  packages/_distutils_hack/__init__.py", line 90, in do_override
+<     ensure_local_distutils()
+<   File "/tmp/pip-build-env-nd5bnm_a/overlay/lib/python3.11/site-
+  packages/_distutils_hack/__init__.py", line 73, in ensure_local_distutils
+<     importlib.import_module('distutils')
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeab
+  i-
+  v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/importlib/__init_
+  _.py", line 126, in import_module
+<     return _bootstrap._gcd_import(name[level:], package, level)
+<            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<   File "/tmp/pip-build-env-nd5bnm_a/overlay/lib/python3.11/site-
+  packages/_distutils_hack/__init__.py", line 110, in find_spec
+<     return method()
+<            ^^^^^^^^
+<   File "/tmp/pip-build-env-nd5bnm_a/overlay/lib/python3.11/site-
+  packages/_distutils_hack/__init__.py", line 117, in spec_for_distutils
+<     import importlib.abc
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeab
+  i-
+  v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/importlib/abc.py"
+  , line 19, in <module>
+<     from .resources.abc import ResourceReader, Traversable,
+  TraversableResources
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeab
+  i-
+  v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/importlib/resourc
+  es/__init__.py", line 3, in <module>
+<     from ._common import (
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeab
+  i-
+  v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/importlib/resourc
+  es/_common.py", line 3, in <module>
+<     import tempfile
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeab
+  i-v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/tempfile.py",
+  line 45, in <module>
+<     from random import Random as _Random
+<   File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeab
+  i-v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/random.py",
+  line 49, in <module>
+<     from math import log as _log, exp as _exp, pi as _pi, e as _e, ceil as
+  _ceil
+< ModuleNotFoundError: No module named 'math'
+
+
+Traceback (most recent call last):
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/__main__.py", line 178, in _handle_build_error
+    yield
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/__main__.py", line 429, in main
+    built = build_call(
+            ^^^^^^^^^^^
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/__main__.py", line 238, in build_package
+    out = _build(isolation, srcdir, outdir, distribution, config_settings, skip_dependency_check, installer)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/__main__.py", line 170, in _build
+    return _build_in_isolated_env(srcdir, outdir, distribution, config_settings, installer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/__main__.py", line 137, in _build_in_isolated_env
+    env.install(builder.get_requires_for_build(distribution, config_settings or {}))
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/env.py", line 136, in install
+    self._env_backend.install_requirements(requirements)
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/env.py", line 265, in install_requirements
+    run_subprocess(cmd)
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/native-build/Lib/site-packages/build/_ctx.py", line 71, in run_subprocess
+    subprocess.run(cmd, capture_output=True, check=True, env=env)
+  File "/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/hostpython3/desktop/hostpython3/Lib/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/python3-libbz2-liblzma/armeabi-v7a__ndk_target_24/python3/android-build/python3', '-m', 'pip', '--python', '/tmp/build-env-064rwb29/bin/python', 'install', '--use-pep517', '--no-warn-script-location', '--no-compile', '-r', '/tmp/build-reqs-lcwic0gw.txt']' returned non-zero exit status 2.
+
+ERROR Command '['/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a/build/other_builds/python3-libbz2-liblzma/armeabi-v7a__ndk_target_24/python3/android-build/python3', '-m', 'pip', '--python', '/tmp/build-env-064rwb29/bin/python', 'install', '--use-pep517', '--no-warn-script-location', '--no-compile', '-r', '/tmp/build-reqs-lcwic0gw.txt']' returned non-zero exit status 2.
+
+
+  STDERR:
+
+# Command failed: ['/usr/bin/python3', '-m', 'pythonforandroid.toolchain', 'create', '--dist_name=lottiedemo', '--bootstrap=sdl2', '--requirements=python3,kivy,pandas', '--arch=armeabi-v7a', '--copy-libs', '--color=always', '--storage-dir=/home/lukas/p4a_pandas_test/.buildozer/android/platform/build-armeabi-v7a', '--ndk-api=24', '--ignore-setup-py', '--debug']
+# ENVIRONMENT:
+#     SHELL = '/bin/bash'
+#     WSL2_GUI_APPS_ENABLED = '1'
+#     WSL_DISTRO_NAME = 'Ubuntu'
+#     NAME = 'DESKTOP-DH3UIVG'
+#     PWD = '/home/lukas/p4a_pandas_test'
+#     LOGNAME = 'lukas'
+#     HOME = '/home/lukas'
+#     LANG = 'C.UTF-8'
+#     WSL_INTEROP = '/run/WSL/339_interop'
+#     LS_COLORS = 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
+#     WAYLAND_DISPLAY = 'wayland-0'
+#     LESSCLOSE = '/usr/bin/lesspipe %s %s'
+#     TERM = 'xterm-256color'
+#     LESSOPEN = '| /usr/bin/lesspipe %s'
+#     USER = 'lukas'
+#     DISPLAY = ':0'
+#     SHLVL = '1'
+#     XDG_RUNTIME_DIR = '/run/user/1000/'
+#     WSLENV = ''
+#     XDG_DATA_DIRS = '/usr/local/share:/usr/share:/var/lib/snapd/desktop'
+#     PATH = ('/home/lukas/.buildozer/android/platform/apache-ant-1.9.4/bin:/home/lukas/.local/bin:/home/lukas/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program '
+ 'Files/WindowsApps/MicrosoftCorporationII.WindowsSubsystemForLinux_2.3.24.0_x64__8wekyb3d8bbwe:/mnt/c/Program '
+ 'Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common '
+ 'Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common '
+ 'Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program '
+ 'Files/Docker/Docker/resources/bin:/mnt/c/Program '
+ 'Files/Git/cmd:/mnt/c/Program Files (x86)/Java/jdk-22.0.1/bin:/mnt/c/Program '
+ 'Files (x86)/apache-maven-3.9.6/bin:/mnt/c/Program '
+ 'Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program '
+ 'Files/dotnet/:/mnt/c/Program Files/Microsoft SQL Server/Client '
+ 'SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL '
+ 'Server/150/Tools/Binn/:/mnt/c/Users/Lukas/AppData/Local/Programs/Python/Python312/Scripts/:/mnt/c/Users/Lukas/AppData/Local/Programs/Python/Python312/:/mnt/c/Users/Lukas/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/Lukas/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Lukas/AppData/Local/Programs/Microsoft '
+ 'VS Code/bin:/mnt/c/Program Files/JetBrains/PyCharm 2024.1/bin:/mnt/c/Program '
+ 'Files/JetBrains/IntelliJ IDEA '
+ '2024.1/bin:/mnt/c/Users/Lukas/AppData/Roaming/npm:/mnt/c/Users/Lukas/.dotnet/tools:/snap/bin:/home/lukas/.local/bin/:/home/lukas/Android/Sdk/cmdline-tools/cmdline-tools/bin:/home/lukas/.local/bin/:/home/lukas/Android/Sdk/cmdline-tools/cmdline-tools/bin')
+#     DBUS_SESSION_BUS_ADDRESS = 'unix:path=/run/user/1000/bus'
+#     HOSTTYPE = 'x86_64'
+#     PULSE_SERVER = 'unix:/mnt/wslg/PulseServer'
+#     _ = '/home/lukas/.local/bin/buildozer'
+#     OLDPWD = '/home/lukas'
+#     PACKAGES_PATH = '/home/lukas/.buildozer/android/packages'
+#     ANDROIDSDK = '/home/lukas/.buildozer/android/platform/android-sdk'
+#     ANDROIDNDK = '/home/lukas/.buildozer/android/platform/android-ndk-r25b'
+#     ANDROIDAPI = '28'
+#     ANDROIDMINAPI = '24'
+#
+# Buildozer failed to execute the last command
